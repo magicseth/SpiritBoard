@@ -1,0 +1,2 @@
+module SpiritsHelper
+end

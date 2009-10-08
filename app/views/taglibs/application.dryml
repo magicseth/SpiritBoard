@@ -1,0 +1,130 @@
+<include src="rapid" plugin="hobo"/>
+
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/>
+
+<set-theme name="clean"/>
+
+<!-- Define your application-wide tags here -->
+
+<def tag="app-name">Spirit Board</def>
+
+
+<def tag="instructions">
+  <div id="instructions" style="background-color:#cfdaf0;margin:0px;position:absolute;top:0px;left:0px;width:320px;height:416px;padding:0px">
+  	<div style="padding:3px; text-align:center">
+  	<h1 style="text-align:center;padding-top:50px">Spirit Board</h1>
+  		What spirit do you seek?<br/>
+		
+  		<%= '<input id="spirit" style="font-size:1.4em" />' %>
+  	<br/>
+  	 	Rotate and tap the planchette.<br/>
+  		<button onclick="showBoard(true)">Go!</button><br/>
+  	<a href="http://magicseth.com"><img src="images/Magic-Seth.png" style="border:0px;position:absolute;bottom:0px;left:0px;" alt="Magic Seth: Sufficiently Advanced Magic"/></a>
+  	</div>
+  </div>
+</def>
+
+
+<def tag="iphone-layout">
+  <page merge>
+    <head:  param>
+      <param-content/>
+      <meta name="viewport" content="initial-scale = 1,minimum-scale = 1, maximum-scale = 1, user-scalable = no"/>
+    </head:>
+    
+    <body: param>
+      <ajax-progress/>
+      <section class="page-content" param="content">
+        <flash-message param/>
+        <flash-message type="error" param/>
+        <header class="content-header" param="content-header"/>
+        <section class="content-body" param="content-body"/>
+        <footer class="content-footer" param="content-footer"/>
+      </section>
+      <footer class="page-footer" param/>
+      <part-contexts-javascripts/>
+    </body:>
+    
+  </page>
+</def>
+
+<def tag="blank-layout">
+  <page merge>
+    <head:  param>
+      <param-content/>
+      <meta name="viewport" content="initial-scale = 1,minimum-scale = 1, maximum-scale = 1, user-scalable = no"/>
+    </head:>
+    
+    <body: param>
+      <ajax-progress/>
+      <section class="page-content" param="content">
+        <flash-message param/>
+        <flash-message type="error" param/>
+        <header class="content-header" param="content-header"/>
+        <section class="content-body" param="content-body"/>
+        <footer class="content-footer" param="content-footer"/>
+      </section>
+      <footer class="page-footer" param/>
+      <part-contexts-javascripts/>
+    </body:>
+    
+  </page>
+</def>
+
+
+<def tag="board">
+  <div id="whole_board">
+    <div id="board" style="position:relative;border-bottom:1px solid brown;width:480px" onclick="reset_message()">
+  		<div style="width:480px;height:268px;">
+  			<img src="/images/blankboard.png" />
+  		</div>
+  		<div style="width:480px;height:268px;position:absolute;top:0px;left:0px;">
+  			<img id="ball" style="z-index:20" src="/images/planchette.png" width="80px" onclick="answer_spot()"/>
+  		</div>
+    </div>
+    <div id="letters">
+      <repeat with="&(0..9).to_a + ('a'..'z').to_a + ['space']">
+        <div onclick="add_to_message('#{this}')" id="target_<%=this%>"><%=this%></div>
+  		</repeat>
+        <div onclick="add_to_message('YES')" id="target_yes">yes</div>
+        <div onclick="add_to_message('NO')" id="target_no">no</div>
+    </div>
+    <div style="position:absolute; top:23px; left:200px; width:80px; height:30px;" onclick="setCard()"></div>
+    <div style="position:absolute; top:190px; left:0px; width:80px; height:80px;" onclick="lock()"></div>
+    <div style="position:absolute; top:220px; left:100px; width:290px; border:0px solid red; font-size:2em; text-align:right; white-space:nowrap;overflow:hidden;height:2em">
+      <div id="message" style="opacity:.6;min-width:280px; border:0px dotted yellow; text-align:center;right:0px; position:absolute; display:inline"></div>
+    </div>
+    <div id="yes" style="width:2px;height:1px;background-color:black;left:97px;top:48px;position:absolute"></div>
+    <div id="no" style="width:2px;height:1px;background-color:black;left:358px;top:48px;position:absolute;display:none"></div>
+  </div>
+</def>
+
+<def tag="card" for="ResponseCategory">
+  <div id="#{this}-list" part="responselist">
+    <set category="&this"/>
+    <do with="&this.answers">
+      <h2><view with="&category.name" /> (<count with="&this" label=""/>)</h2>
+      <ul><li:><editor:active/><a/><delete-button/></li></ul>
+    </do>
+    <form with="&current_user.answers.new" update="#{category}-list">
+      <% this.response_category = category
+        this.active = true
+      %>
+  		<input field="name" /><submit class="small" label="add" />
+  	</form>
+	</div>
+</def>
+
+
+<def tag = "list-all">
+	<div class="list-all #{type_name}">
+	<h2: param="title"><type-name plural/>:</h2>
+	<section class="#{type_name} box" id="#{type_name}-list" part="list">
+		<repeat even-odd="div">
+      <a/>
+		</repeat>
+	</section>
+	</div>
+</def>

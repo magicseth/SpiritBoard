@@ -1,0 +1,68 @@
+body {margin:0px}
+  #whole_board {
+  }
+	#letters, #buttons {
+/*    width:0px;
+    height:0px;
+*/		position:absolute;
+		top:0px;left:0px;
+		opacity:.4;
+	}
+	#letters div {position:absolute; 
+		width:30px; 
+		height:30px; 
+		background-color:red;
+		border:1px solid blue;
+/*    background-color:transparent;
+*/		border:0px;
+    visibility:hidden;
+		}
+	#target_a {top:105px;	left:69px}
+	#target_b {top:89px;	left:91px}
+	#target_c {top:78px;	left:121px}
+	#target_d {top:68px;	left:149px}
+	#target_e {top:63px;	left:173px}
+	#target_f {top:60px;	left:199px}
+	#target_g {top:60px;	left:227px}
+	#target_h {top:62px;	left:257px}
+	#target_i {top:65px;	left:283px}
+	#target_j {top:70px;	left:302px}
+	#target_k {top:76px;	left:323px}
+	#target_l {top:88px;	left:346px}
+	#target_m {top:98px;	left:377px}
+	#target_n {top:140px;  left:77px}
+	#target_o {top:122px;   left:103px}
+	#target_p {top:113px;   left:127px}
+	#target_q {top:105px;   left:158px}
+	#target_r {top:100px;   left:185px}
+	#target_s {top:99px;   left:210px}
+	#target_t {top:98px;   left:227px}
+	#target_u {top:98px;   left:252px}
+	#target_v {top:103px;   left:281px}
+	#target_w {top:109px;   left:302px}
+	#target_x {top:120px;   left:333px}
+	#target_y {top:130px;   left:357px}
+	#target_z {top:147px;   left:377px}
+#target_space {top:140px;	left:230px}
+   #target_1 {top:173px;	left:110px}
+   #target_2 {top:173px;	left:130px}
+   #target_3 {top:173px;	left:160px}
+   #target_4 {top:173px;	left:189px}
+   #target_5 {top:173px;	left:214px}
+   #target_6 {top:173px;	left:240px}
+   #target_7 {top:173px;	left:264px}
+   #target_8 {top:173px;	left:290px}
+   #target_9 {top:173px;	left:315px}
+   #target_0 {top:173px;	left:340px}
+   #target_yes {top:25px;	left:95px}
+   #target_no {top:25px;	left:354px}
+   
+     #ball {
+			width:80px;
+			height:112px;
+			margin-left:-40px;
+			margin-top:-48px;
+			position:absolute;
+			top:156px;
+			left:245px;
+		}

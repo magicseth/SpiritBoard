@@ -1,0 +1,339 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<!-- ====== Main Navigation ====== -->
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Message">Messages</nav-item>
+    <nav-item with="&Spirit">Spirits</nav-item>
+  </navigation>
+</def>
+
+
+
+  
+<!-- ====== Message Pages ====== -->
+
+
+<def tag="index-page" for="Message">
+  <page merge title="Messages">
+    <body: class="index-page message" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Messages</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Message">
+  <page merge title="New Message">
+    <body: class="new-page message" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Message</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Message"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Message">
+  <page merge title="Message">
+
+    <body: class="show-page message" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Message</a>
+          </header>
+    
+          <section param="content-body">
+            <view:body param="description"/>
+            <field-list fields="udid" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Message">
+  <page merge title="Edit Message">
+
+    <body: class="edit-page message" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Message" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== Spirit Pages ====== -->
+
+
+<def tag="index-page" for="Spirit">
+  <page merge title="Spirits">
+    <body: class="index-page spirit" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Spirits</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Spirit">
+  <page merge title="New Spirit">
+    <body: class="new-page spirit" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Spirit</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Spirit"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Spirit">
+  <page merge title="Spirit">
+
+    <body: class="show-page spirit" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Spirit</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="udid, iphone" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Spirit">
+  <page merge title="Edit Spirit">
+
+    <body: class="edit-page spirit" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Spirit" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== User Pages ====== -->
+
+
+<def tag="index-page" for="User">
+  <page merge title="Users">
+    <body: class="index-page user" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Users</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="User">
+  <page merge title="New User">
+    <body: class="new-page user" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New User</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create User"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="User">
+  <page merge title="User">
+
+    <body: class="show-page user" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="administrator" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit User</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="email_address" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="User">
+  <page merge title="Edit User">
+
+    <body: class="edit-page user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This User" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="signup-page" polymorphic/>
+<def tag="signup-page" for="User">
+
+  <page title="Signup" merge>
+
+    <body: class="lifecycle-start-page signup-page" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Signup</h2>
+      </header>
+
+      <section param="content-body">
+        <signup-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="reset-password-page" polymorphic/>
+<def tag="reset-password-page" for="User">
+  <page title="Reset Password" merge>
+    
+    <body: class="lifecycle-transition-page reset-password-page" param/>
+    
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">Reset Password</h2>
+      </header>
+      
+      <section param="content-body">
+        <reset-password-form param="form"/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
