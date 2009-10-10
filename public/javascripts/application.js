@@ -79,7 +79,8 @@ function say(p) {
   startPhrase();
 }
 function startPhrase() {
-  reset_message();
+  if (current_position == 0)
+  	reset_message();
   working = true;
   nextLetter();
 }
