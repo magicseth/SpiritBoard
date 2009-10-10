@@ -84,8 +84,14 @@ function startPhrase() {
   nextLetter();
 }
 function setPhrase(p) {
+	if (current_phrase.length && p.indexOf(current_phrase) == 0) {
+		
+	} else {
+		//completely new phrase, start over.
+		current_position = 0;
+	}
 	current_phrase = p;
-	current_position = 0;
+
 }
 
 function nextLetter() {
