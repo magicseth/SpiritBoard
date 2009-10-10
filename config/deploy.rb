@@ -32,3 +32,6 @@ role :db,  "bettermagician.com", :primary => true # This is where Rails migratio
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+task :after_update_code do
+  # run "ln -nfs #{deploy_to}/#{shared_dir}/config/database.yml #{release_path}/config/database.yml"
+end
