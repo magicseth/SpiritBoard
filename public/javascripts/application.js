@@ -20,6 +20,7 @@ function process(p) {
 	input = p.split(" ")
 	thisNum = parseFloat(input[0])
 	command = input[1]
+	if (lastNumber == 0) lastNumber = thisNum
 	if (thisNum <= lastNumber) {
 		setTimeout(startitup, delayperiod)
 	} else {
