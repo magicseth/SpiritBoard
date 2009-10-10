@@ -29,12 +29,12 @@ class SpiritsController < ApplicationController
         m.body = ""
         render(:text =>"Tell your friend to go to:
 
-        http://spiritboard.org/
+http://spiritboard.org/
 
 
-        and type in the name:
+and type in the name:
 
-        \"" + oldspirit.name + "\"", :status => 201 )
+        \"" + this.name + "\"", :status => 201 )
       end
     end
   end
