@@ -5,7 +5,7 @@ set :branch, "master"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :deploy_to, "/home/betterma/apps/SpritBoardCap"
+set :deploy_to, "/home/betterma/apps/cap/SpiritBoard"
 
 default_run_options[:pty] = true
 set :ssh_options, { :forward_agent => true }
