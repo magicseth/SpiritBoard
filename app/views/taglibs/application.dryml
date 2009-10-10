@@ -78,7 +78,7 @@
   <div id="whole_board">
     <div id="board" style="position:relative;border-bottom:1px solid brown;width:480px" onclick="reset_message()">
   		<div style="width:480px;height:268px;">
-  			<img src="/images/blankboard.png" />
+  			<img src="/images/morseboard.png" />
   		</div>
   		<div style="width:480px;height:268px;position:absolute;top:0px;left:0px;">
   			<img id="ball" style="z-index:20" src="/images/planchette.png" width="80px" onclick="answer_spot()"/>
