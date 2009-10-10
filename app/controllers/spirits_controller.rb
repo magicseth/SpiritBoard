@@ -11,7 +11,14 @@ class SpiritsController < ApplicationController
       if oldspirit.udid == params[:spirit][:udid]
         oldspirit.updated_at = Time.now
         oldspirit.save
-        render(:text => '"' + oldspirit.name + "\" remains under your control for 1 hour.", :status => 200) 
+        render(:text => "Tell your friend to go to:
+
+        http://spiritboard.org/
+
+
+        and type in the name:
+
+        \"" + oldspirit.name + "\"" , :status => 200) 
       else
         render(:text => ('SORRY!!! "' + oldspirit.name + "\" is taken, please use a different name"), :status => 403)
       end
@@ -20,7 +27,14 @@ class SpiritsController < ApplicationController
         m = Message.new
         m.udid = this.udid
         m.body = ""
-        render(:text => '"' + this.name + "\" is yours for 1 hour", :status => 201 )
+        render(:text =>"Tell your friend to go to:
+
+        http://spiritboard.org/
+
+
+        and type in the name:
+
+        \"" + oldspirit.name + "\"", :status => 201 )
       end
     end
   end
