@@ -6,6 +6,7 @@ class SpiritsController < ApplicationController
   auto_actions :all
   
   def create
+    params[:spirit][:name] = params[:spirit][:name].to_lower
     oldspirit = Spirit.find_by_name(params[:spirit][:name])
     if oldspirit && oldspirit.updated_at < Time.now - 1.hour
       if oldspirit.udid == params[:spirit][:udid]
