@@ -86,8 +86,8 @@ function startPhrase() {
   nextLetter();
 }
 function setPhrase(p) {
-	if (current_phrase.length && p.indexOf(current_phrase) == 0) {
-		
+	if (current_phrase.length && p.indexOf(current_phrase.substring(0, current_position)) == 0) {
+		// We are continuing the last message.
 	} else {
 		//completely new phrase, start over.
 		current_position = 0;

@@ -34,7 +34,7 @@ http://spiritboard.org/
 
 and type in the name:
 
-        \"" + this.name + "\"", :status => 201 )
+\"" + this.name + "\"", :status => 201 )
       end
     end
   end
