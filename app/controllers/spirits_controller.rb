@@ -14,12 +14,12 @@ class SpiritsController < ApplicationController
         oldspirit.save
         render(:text => "Tell your friend to go to:
 
-        http://spiritboard.org/
+http://spiritboard.org/
 
 
-        and type in the name:
+and type in the name:
 
-        \"" + oldspirit.name + "\"" , :status => 200) 
+\"" + oldspirit.name + "\"" , :status => 200) 
       else
         render(:text => ('SORRY!!! "' + oldspirit.name + "\" is taken, please use a different name"), :status => 403)
       end
