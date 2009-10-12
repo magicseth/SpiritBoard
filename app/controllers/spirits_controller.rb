@@ -8,7 +8,7 @@ class SpiritsController < ApplicationController
   def create
     params[:spirit][:name] = params[:spirit][:name].downcase
     oldspirit = Spirit.find_by_name(params[:spirit][:name])
-    if oldspirit && oldspirit.updated_at < Time.now - 1.hour
+    if oldspirit && oldspirit.updated_at > Time.now - 1.hour
       if oldspirit.udid == params[:spirit][:udid]
         oldspirit.updated_at = Time.now
         oldspirit.save
