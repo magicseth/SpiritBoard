@@ -128,3 +128,21 @@
 	</section>
 	</div>
 </def>
+
+<def tag="card" for="Spirit">
+  <card class="spirit" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+	<%=udid%>
+  </card>
+</def>
+
+<def tag="card" for="Message">
+  <card class="message" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+<%=text%>
+  </card>
+</def>
