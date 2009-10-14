@@ -143,6 +143,6 @@
     <header: param>
       <h4 param="heading"><a><name/></a></h4>
     </header:>
-<body:><%=this.text%></body:>
+<body:><%=this.body%></body:>
   </card>
 </def>
