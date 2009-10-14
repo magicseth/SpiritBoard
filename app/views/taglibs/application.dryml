@@ -134,7 +134,7 @@
     <header: param>
       <h4 param="heading"><a><name/></a></h4>
     </header:>
-	<%=udid%>
+	<%=this.udid%>
   </card>
 </def>
 
@@ -143,6 +143,6 @@
     <header: param>
       <h4 param="heading"><a><name/></a></h4>
     </header:>
-<%=text%>
+<%=this.text%>
   </card>
 </def>
