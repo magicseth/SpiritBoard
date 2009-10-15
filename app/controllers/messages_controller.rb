@@ -16,12 +16,15 @@ class MessagesController < ApplicationController
   def random
     # debugger
     udid = cookies[:udid]
-    if udid.nil? && params[:spirit] != ""
+    if params[:spirit] != ""
       spirit = Spirit.find_by_name(params[:spirit], :order => "updated_at DESC")
-      udid = spirit.udid if spirit
-      cookies[:udid] = udid
+      if udid.nil?
+        # we have a spirit, and no UDID, easy
+        udid = spirit.udid if spirit
+        cookies[:udid] = udid
+      end
     end
-    text = "0 yeehaw"
+    text = "nobody home"
     if !udid.nil?
       message = Message.find_by_udid(udid, :order => "updated_at DESC")
       text = "" + message.id.to_s + " " + message.body if message
