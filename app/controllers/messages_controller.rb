@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
         cookies[:udid] = udid
       end
     end
-    text = "nobody home"
+    text = "0 yeehaw"
     if !udid.nil?
       message = Message.find_by_udid(udid, :order => "updated_at DESC")
       text = "" + message.id.to_s + " " + message.body if message
