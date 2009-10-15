@@ -9,6 +9,10 @@ class FrontController < ApplicationController
   end
 
   def news
+    if params[:version] == "prealpha"
+      # PDB
+      render :text => "upgrade"
+    end
   end
 
   def search
