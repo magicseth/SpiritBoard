@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
     udid = cookies[:udid]
     if params[:spirit] != ""
       spirit = Spirit.find_by_name(params[:spirit], :order => "updated_at DESC")
-      if udid.nil?
+      if udid.nil? || udid == ""
         # we have a spirit, and no UDID, easy
         udid = spirit.udid if spirit
         cookies[:udid] = udid
